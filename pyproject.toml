@@ -65,3 +65,6 @@ all = [
     "pytest",
     "black .",
 ]
+
+[tool.black]
+target-version = ["py310"]
