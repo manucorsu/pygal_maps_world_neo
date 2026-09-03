@@ -45,3 +45,9 @@ path = "pygal_maps_world/__init__.py"
 
 [tool.hatch.build.targets.sdist]
 include = ["/pygal_maps_world"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["pygal_maps_world"]
+
+[tool.hatch.envs.default]
+path = ".venv"
