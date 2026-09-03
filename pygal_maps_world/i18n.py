@@ -1,3 +1,4 @@
+
 COUNTRIES = {
     'ad': 'Andorra',
     'ae': 'United Arab Emirates',
@@ -13,7 +14,7 @@ COUNTRIES = {
     'at': 'Austria',
     'au': 'Australia',
     'aw': 'Aruba',
-    'ax': 'Aland Islands',
+    'ax': 'Åland Islands',
     'az': 'Azerbaijan',
     'ba': 'Bosnia and Herzegovina',
     'bb': 'Barbados',
@@ -27,7 +28,7 @@ COUNTRIES = {
     'bl': 'Saint Barthélemy',
     'bm': 'Bermuda',
     'bn': 'Brunei Darussalam',
-    'bo': 'Bolivia',
+    'bo': 'Bolivia, Plurinational State of',
     'bq': 'Bonaire, Sint Eustatius and Saba',
     'br': 'Brazil',
     'bs': 'Bahamas',
@@ -50,11 +51,11 @@ COUNTRIES = {
     'co': 'Colombia',
     'cr': 'Costa Rica',
     'cu': 'Cuba',
-    'cv': 'Cape Verde',
+    'cv': 'Cabo Verde',
     'cw': 'Curaçao',
     'cx': 'Christmas Island',
     'cy': 'Cyprus',
-    'cz': 'Czech Republic',
+    'cz': 'Czechia',
     'de': 'Germany',
     'dj': 'Djibouti',
     'dk': 'Denmark',
@@ -71,7 +72,7 @@ COUNTRIES = {
     'fi': 'Finland',
     'fj': 'Fiji',
     'fk': 'Falkland Islands (Malvinas)',
-    'fm': 'Micronesia, Federated States of',
+    'fm': 'Micronesia (Federated States of)',
     'fo': 'Faroe Islands',
     'fr': 'France',
     'ga': 'Gabon',
@@ -106,7 +107,7 @@ COUNTRIES = {
     'in': 'India',
     'io': 'British Indian Ocean Territory',
     'iq': 'Iraq',
-    'ir': 'Iran',
+    'ir': 'Iran (Islamic Republic of)',
     'is': 'Iceland',
     'it': 'Italy',
     'je': 'Jersey',
@@ -119,12 +120,12 @@ COUNTRIES = {
     'ki': 'Kiribati',
     'km': 'Comoros',
     'kn': 'Saint Kitts and Nevis',
-    'kp': 'North Korea',
-    'kr': 'South Korea',
+    'kp': "Korea (Democratic People's Republic of)",
+    'kr': 'Korea (Republic of)',
     'kw': 'Kuwait',
     'ky': 'Cayman Islands',
     'kz': 'Kazakhstan',
-    'la': 'Laos',
+    'la': "Lao People's Democratic Republic",
     'lb': 'Lebanon',
     'lc': 'Saint Lucia',
     'li': 'Liechtenstein',
@@ -181,7 +182,7 @@ COUNTRIES = {
     'pm': 'Saint Pierre and Miquelon',
     'pn': 'Pitcairn',
     'pr': 'Puerto Rico',
-    'ps': 'Palestine',
+    'ps': 'Palestine, State of',
     'pt': 'Portugal',
     'pw': 'Palau',
     'py': 'Paraguay',
@@ -210,8 +211,8 @@ COUNTRIES = {
     'st': 'Sao Tome and Principe',
     'sv': 'El Salvador',
     'sx': 'Sint Maarten (Dutch part)',
-    'sy': 'Syria',
-    'sz': 'Swaziland',
+    'sy': 'Syrian Arab Republic',
+    'sz': 'Eswatini',
     'tc': 'Turks and Caicos Islands',
     'td': 'Chad',
     'tf': 'French Southern Territories',
@@ -223,7 +224,7 @@ COUNTRIES = {
     'tm': 'Turkmenistan',
     'tn': 'Tunisia',
     'to': 'Tonga',
-    'tr': 'Turkey',
+    'tr': 'Türkiye',
     'tt': 'Trinidad and Tobago',
     'tv': 'Tuvalu',
     'tw': 'Taiwan, Province of China',
@@ -236,7 +237,7 @@ COUNTRIES = {
     'uz': 'Uzbekistan',
     'va': 'Holy See (Vatican City State)',
     'vc': 'Saint Vincent and the Grenadines',
-    've': 'Venezuela',
+    've': 'Venezuela (Bolivarian Republic of)',
     'vg': 'Virgin Islands, British',
     'vi': 'Virgin Islands, U.S.',
     'vn': 'Viet Nam',
@@ -251,21 +252,56 @@ COUNTRIES = {
 }
 
 
-EUR = ['be', 'de', 'ie', 'gr', 'es', 'fr', 'it', 'cy', 'lu', 'mt', 'nl', 'at',
-       'pt', 'si', 'sk', 'fi', 'ee']
+EUR = [
+    'be', 'de', 'ie', 'gr', 'es', 'fr', 'it', 'cy', 'lu', 'mt', 'nl', 'at',
+    'pt', 'si', 'sk', 'fi', 'ee', 'lv', 'lt', 'hr', 'bg'
+]
+"""
+Euro area (EU member states)
+"""
 
-OECD = ['au', 'at', 'be', 'ca', 'cl', 'cz', 'dk', 'ee', 'fi', 'fr', 'de', 'gr',
-        'hu', 'is', 'ie', 'il', 'it', 'jp', 'kr', 'lu', 'mx', 'nl', 'nz', 'no',
-        'pl', 'pt', 'sk', 'si', 'es', 'se', 'ch', 'tr', 'gb', 'us']
+OECD = [
+    'au', 'at', 'be', 'ca', 'cl', 'co', 'cr', 'cz', 'dk', 'ee', 'fi', 'fr',
+    'de', 'gr', 'hu', 'is', 'ie', 'il', 'it', 'jp', 'kr', 'lu', 'mx', 'nl',
+    'nz', 'no', 'pl', 'pt', 'sk', 'si', 'es', 'se', 'ch', 'tr', 'gb', 'us'
+]
+"""
+OECD member states
+"""
 
 NAFTA = ['ca', 'mx', 'us']
+"""
+North American Free Trade Agreement.
+
+**It should no longer be used** as it has been replaced by the United States-Mexico-Canada Agreement (USMCA) in 2020.
+
+You can access that via the `USMCA` constant
+"""
+
+USMCA = ["us", "mx", "ca"]
+"""
+Agreement between the United States of America, the United Mexican States, and Canada (USMCA)
+
+Free trade agreement between the US, Mexico and Canada that entered into force in 2020.
+"""
 
 # Continents
+
+
+# The following groupings are retained for backwards compatibility.
+# They reflect the historical pygal_maps_world classification even
+# if they are not strictly geographically or politically accurate.
+#
+# For example, the NORTH_AMERICA group includes some (but not all)
+# Caribbean islands, whilst OCEANIA is lacking some Pacific islands.
+#
+# Do not add or remove any members.
+# (the only change that was made was removing a duplicate 'mn' in ASIA)
 
 ASIA = [
     'af', 'am', 'az', 'bh', 'bd', 'bt', 'bn', 'mn', 'mm', 'kh', 'cn', 'cy',
     'tl', 'ge', 'in', 'id', 'ir', 'iq', 'il', 'jp', 'jo', 'kz', 'kw', 'kg',
-    'la', 'lb', 'my', 'mv', 'mn', 'np', 'kp', 'om', 'pk', 'ps', 'ph', 'ru',
+    'la', 'lb', 'my', 'mv', 'np', 'kp', 'om', 'pk', 'ps', 'ph', 'ru',
     'sa', 'sg', 'lk', 'kr', 'sy', 'tw', 'tj', 'th', 'tr', 'tm', 'ae', 'uz',
     'vn', 'ye', 'mo', 'hk', 'qa'
 ]
@@ -303,6 +339,11 @@ OCEANIA = [
 ANTARTICA = [
     'aq'
 ]
+"""
+**This is a misspelling of `ANTARCTICA`** kept only for backwards compatibility. Please use `ANTARCTICA` instead.
+"""
+
+ANTARCTICA = ["aq"]
 
 SUPRANATIONAL = {
     'oecd': OECD,
@@ -315,11 +356,24 @@ SUPRANATIONAL = {
     'north_america': NORTH_AMERICA,
     'south_america': SOUTH_AMERICA,
     'oceania': OCEANIA,
-    'antartica': ANTARTICA
+    'antartica': ANTARTICA,
+    "antarctica": ANTARCTICA,
+
+    'usmca': USMCA
 }
+"""
+`antartica` (misspelled) and `nafta` (no longer exists) are still here, but they **should not be used**.
+
+Use `antarctica` and `usmca` respectively instead.
+"""
 
 
 def set_countries(countries, clear=False):
+    """
+    Update the countries dictionary with the given countries. If clear is True, the existing countries will be cleared before updating.
+
+    The countries parameter should be a dictionary-like object where the keys are lowercase ISO 3166-1 alpha-2 codes and the values are country names.
+    """
     if clear:
         COUNTRIES.clear()
     COUNTRIES.update(countries)
