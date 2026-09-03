@@ -5,7 +5,7 @@ This is a fork of the seemingly unmaintained [pygal-maps-world](https://github.c
 In the spirit of respecting the [preferences](https://github.com/Kozea/CairoSVG/issues/373#issuecomment-1365838194) of pygal's authors, **this file has no type hints or type stubs**. Type checking users will soon be able to get them via [pygal-stubs](https://github.com/manucorsu/pygal-stubs) (will go public as soon as it's done, please be patient)
 
 > [!IMPORTANT]
-> Similar to pygal-stubs, the oldest Python version that this fork is the newest of:
+> Similar to pygal-stubs, the oldest Python version that this fork supports is the newest of:
 >    - the oldest Python version that is still receiving security updates (currently 3.10)
 >    - the oldest version that pygal supports (currently 3.9)
 >
