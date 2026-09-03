@@ -9,3 +9,4 @@ This will be the first release of this fork.
     - Added a `USMCA` constant for the US-Mexico-Canada trade agreement (`NAFTA` is still available but discouraged).
     - Added a properly spelled `ANTARCTICA` constant (the old `ANTARTICA` is still available but discouraged).
     - Updated the Euro area (`EUR`) and OECD (`OECD`) lists which were missing some member states.
+    - Standardized country names in the `i18n` module to match their ISO names (most were already, but some were not).
