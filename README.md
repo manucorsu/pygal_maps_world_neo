@@ -8,6 +8,7 @@ In the spirit of respecting the [preferences](https://github.com/Kozea/CairoSVG/
 > Similar to pygal-stubs, the oldest Python version that this fork is the newest of:
 >    - the oldest Python version that is still receiving security updates (currently 3.10)
 >    - the oldest version that pygal supports (currently 3.9)
+>
 > At the time of writing, that means that the oldest Python version we support is **Python 3.10** until its EOL on **November 1, 2026**.
 ## Contributing
 PRs are welcome. Please follow the rules:
