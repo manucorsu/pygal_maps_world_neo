@@ -4,6 +4,11 @@ This is a fork of the seemingly unmaintained [pygal-maps-world](https://github.c
 
 In the spirit of respecting the [preferences](https://github.com/Kozea/CairoSVG/issues/373#issuecomment-1365838194) of pygal's authors, **this file has no type hints or type stubs**. Type checking users will soon be able to get them via [pygal-stubs](https://github.com/manucorsu/pygal-stubs) (will go public as soon as it's done, please be patient)
 
+> [!IMPORTANT]
+> Similar to pygal-stubs, the oldest Python version that this fork is the newest of:
+>    - the oldest Python version that is still receiving security updates (currently 3.10)
+>    - the oldest version that pygal supports (currently 3.9)
+> At the time of writing, that means that the oldest Python version we support is **Python 3.10** until its EOL on **November 1, 2026**.
 ## Contributing
 PRs are welcome. Please follow the rules:
 - Do not break the existing API. If you want to add new features, please do so in a backward-compatible way.
@@ -17,3 +22,15 @@ To work on this project:
 4. Run `hatch shell`. This will create a virtual environment, activate it, and install all of the dependencies (pygal itself + dev dependencies pytest, pyquery and black)
 5. Make your changes. Once you're done, run `hatch run check:all` to test your code with pytest and autoformat with black.
 6. Commit, push and open a PR asking to merge your fork's branch into this repository's `master` branch.
+
+### To-do list
+I'll add these fixes myself once I get the time. Right now I need to focus in getting pygal-stubs out the door  and school. If you want to help, please open a PR with your changes. Thanks!
+#### High-ish priority
+- Make it so that the `1` value does not appear in maps where it is not needed, e.g. in maps like this one
+[![incorrect1.png](https://i.postimg.cc/Y0JFKjvd/incorrect1.png)](https://postimg.cc/kRvGWJFS)
+- Fix the label that appears on hover, which after updating the SVG seems to be completely broken and I've haven't been able to fix it yet. The label instead of appearing on top of the country, it sometimes appears very far away from it, like in this example
+[![malawi.png](https://i.postimg.cc/G24PZWMR/malawi.png)](https://postimg.cc/zb1RhcZ2)
+##### Low priority
+- Add more constants to the `i18n` module, e.g. ASEAN, MERCOSUR, EU, etc.
+- (veery low priority as I know it'll be a mess to implement) add the ability for maps to have both countries and supranational groups, e.g. a map that shows the entire EU in one color while showing every other country as separate.
+- Any other improvements you can think of. If you want to help, please open a PR with your changes. Thanks!
