@@ -50,4 +50,5 @@ include = ["/pygal_maps_world"]
 packages = ["pygal_maps_world"]
 
 [tool.hatch.envs.default]
+python = "3.10"
 path = ".venv"
