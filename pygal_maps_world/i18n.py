@@ -226,7 +226,7 @@ COUNTRIES = {
     'tr': 'Turkey',
     'tt': 'Trinidad and Tobago',
     'tv': 'Tuvalu',
-    'tw': 'Taiwan, Republic of China',
+    'tw': 'Taiwan, Province of China',
     'tz': 'Tanzania, United Republic of',
     'ua': 'Ukraine',
     'ug': 'Uganda',
