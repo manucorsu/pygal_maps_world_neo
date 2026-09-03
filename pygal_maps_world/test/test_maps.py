@@ -17,10 +17,10 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with pygal. If not, see <http://www.gnu.org/licenses/>.
 
-from pygal_maps_world.maps import (
-    World, SupranationalWorld)
+from pygal_maps_world.maps import World, SupranationalWorld
 from pygal_maps_world.i18n import COUNTRIES, SUPRANATIONAL, set_countries
 import operator
+
 try:
     from functools import reduce
 except ImportError:
@@ -36,12 +36,10 @@ def test_worldmap():
         datas[ctry] = i
 
     wmap = World()
-    wmap.add('countries', datas)
+    wmap.add("countries", datas)
     q = wmap.render_pyquery()
-    assert len(
-        q('.country.color-0')
-    ) == len(COUNTRIES)
-    assert 'France' in q('.country.fr').text()
+    assert len(q(".country.color-0")) == len(COUNTRIES)
+    assert "France" in q(".country.fr").text()
 
 
 def test_worldmap_i18n():
@@ -50,26 +48,22 @@ def test_worldmap_i18n():
     for i, ctry in enumerate(COUNTRIES):
         datas[ctry] = i
 
-    set_countries({'fr': 'Francia'})
+    set_countries({"fr": "Francia"})
     wmap = World()
-    wmap.add('countries', datas)
+    wmap.add("countries", datas)
     q = wmap.render_pyquery()
-    assert len(
-        q('.country.color-0')
-    ) == len(COUNTRIES)
-    assert 'Francia' in q('.country.fr').text()
+    assert len(q(".country.color-0")) == len(COUNTRIES)
+    assert "Francia" in q(".country.fr").text()
 
 
 def test_worldmap_i18n_clear():
     set_countries(_COUNTRIES, True)
     wmap = World()
-    wmap.add('countries', dict(fr=12))
-    set_countries({'fr': 'Frankreich'}, clear=True)
+    wmap.add("countries", dict(fr=12))
+    set_countries({"fr": "Frankreich"}, clear=True)
     q = wmap.render_pyquery()
-    assert len(
-        q('.country.color-0')
-    ) == 1
-    assert 'Frankreich' in q('.country.fr').text()
+    assert len(q(".country.color-0")) == 1
+    assert "Frankreich" in q(".country.fr").text()
 
 
 def test_supranationalworldmap():
@@ -79,9 +73,8 @@ def test_supranationalworldmap():
         datas[supra] = i + 1
 
     wmap = SupranationalWorld()
-    wmap.add('supra', datas)
+    wmap.add("supra", datas)
     q = wmap.render_pyquery()
-    assert len(
-        q('.country.color-0')
-    ) == len(
-        reduce(operator.or_, map(set, SUPRANATIONAL.values())))
+    assert len(q(".country.color-0")) == len(
+        reduce(operator.or_, map(set, SUPRANATIONAL.values()))
+    )
