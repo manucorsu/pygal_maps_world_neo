@@ -1,3 +1,7 @@
+# 1.1.1
+- Fix the package's name (I'm stupid). `pygal-maps-world-neo` will be taken down from PyPI, use `pygal_maps_world_neo` instead.
+    
+
 # 1.1.0
 This is the first release of this fork.
 - Applied the fixes @a455bcd9 proposed in [the original's PR #5](https://github.com/Kozea/pygal_maps_world/pull/5) in early 2021.

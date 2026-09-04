@@ -1,4 +1,4 @@
-_This README has some GitHub exclusive features, please read it [there](https://github.com/manucorsu/pygal_maps_world_neo/blob/master/README.md) instead of on PyPI_
+_This README has some GitHub-exclusive features, please read it [there](https://github.com/manucorsu/pygal_maps_world_neo/blob/master/README.md) instead of on PyPI_.
 
 # pygal_maps_world_neo
 
@@ -15,7 +15,7 @@ In the spirit of respecting the [preferences](https://github.com/Kozea/CairoSVG/
 >
 > At the time of writing, that means that the oldest Python version we support is **Python 3.10** until its [EOL](https://devguide.python.org/versions/) in **October 2026**
 
-To install, simply do `pip install pygal-maps-world-neo` (or however you install packages from PyPI. This will also install pygal.)
+To install, simply do `pip install pygal_maps_world_neo` (or however you install packages from PyPI. This will also install pygal.)
 
 Then, in your code (for now, since we haven't added any major new features, you can use it exactly like the original package), e.g.:
 
@@ -39,7 +39,7 @@ See [pygal's docs](https://www.pygal.org/en/stable/documentation/types/maps/pyga
 PRs are welcome. Please follow the rules:
 - **Do not break the existing API in any way**. If you want to add new features, please do so in a backward-compatible way. This fork should be a drop-in replacement for the original.
 - Type checking-related changes will soon be welcome in [pygal-stubs](https://github.com/manucorsu/pygal-stubs), but not here (see above).
-- Review all AI generated code.
+- Review all AI-generated code.
 
 To work on this project:
 1. [Install Hatch](https://hatch.pypa.io/latest/install/) if you don't have it already. **This fork has migrated from `setup.py` to Hatchling**.
