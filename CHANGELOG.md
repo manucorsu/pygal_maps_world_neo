@@ -1,5 +1,5 @@
 # 1.1.1
-- Fix the package's name (I'm stupid). `pygal-maps-world-neo` will be taken down from PyPI, use `pygal_maps_world_neo` instead.
+- Fix the package's name (I'm stupid). Use `pygal_maps_world_neo` instead of `pygal-maps-world-neo`.
     
 
 # 1.1.0
