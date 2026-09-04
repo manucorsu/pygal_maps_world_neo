@@ -2,7 +2,7 @@ _This README has some GitHub exclusive features, please read it [there](https://
 
 # pygal_maps_world_neo
 
-This is a fork of the seemingly unmaintained [pygal_maps_world](https://github.com/Kozea/pygal-maps-world) (last commit in July 2015), initially updated with the fixes Antoine Dusséaux ([@a455bcd9](https://github.com/a455bcd9)) proposed in [the original's PR #5](https://github.com/Kozea/pygal_maps_world/pull/5) (early 2021) + some additional fixes and improvements (see [CHANGELOG](https://github.com/manucorsu/pygal_maps_world_neo/blob/master/CHANGELOG.md)).
+This is a fork of the seemingly unmaintained [pygal_maps_world](https://github.com/Kozea/pygal_maps_world) (last commit in July 2015), initially updated with the fixes Antoine Dusséaux ([@a455bcd9](https://github.com/a455bcd9)) proposed in [the original's PR #5](https://github.com/Kozea/pygal_maps_world/pull/5) (early 2021) + some additional fixes and improvements (see [CHANGELOG](https://github.com/manucorsu/pygal_maps_world_neo/blob/master/CHANGELOG.md)).
 
 In the spirit of respecting the [preferences](https://github.com/Kozea/CairoSVG/issues/373#issuecomment-1365838194) of pygal's authors, **this file has no type hints or type stubs**. Type checking users will soon be able to get them via [pygal-stubs](https://github.com/manucorsu/pygal-stubs) (will go public as soon as it's done, please be patient).
 
