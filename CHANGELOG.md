@@ -1,6 +1,10 @@
+# 1.1.2
+Prepping for the imminent release of [pygal_maps_world_neo-stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs) alongside [pygal-stubs](https://github.com/manucorsu/pygal-stubs).
+
+- The `World` and `SupranationalWorld` classes are now also accessible from the top-level of `pygal_maps_world`, meaning you can now do (and **must** do if you're using the type stubs, see [README](https://github.com/manucorsu/pygal_maps_world_neo/blob/master/README.md)) `from pygal_maps_world import World, SupranationalWorld` instead of `from pygal.maps.world import World, SupranationalWorld`.
+
 # 1.1.1
 - Fix the package's name (I'm stupid). Use `pygal_maps_world_neo` instead of `pygal-maps-world-neo`.
-    
 
 # 1.1.0
 This is the first release of this fork.
