@@ -4,8 +4,7 @@ _The most up-to-date version of this README is on [GitHub](https://github.com/ma
 
 This is a fork of the seemingly unmaintained [pygal_maps_world](https://github.com/Kozea/pygal_maps_world) (last commit in July 2015), initially updated with the fixes Antoine Dusséaux ([@a455bcd9](https://github.com/a455bcd9)) proposed in [the original's PR #5](https://github.com/Kozea/pygal_maps_world/pull/5) (early 2021) + some additional fixes and improvements (see [CHANGELOG](https://github.com/manucorsu/pygal_maps_world_neo/blob/master/CHANGELOG.md)).
 
-In the spirit of respecting the [preferences](https://github.com/Kozea/CairoSVG/issues/373#issuecomment-1365838194) of pygal's authors, **this repository has no type hints or type stubs**. You can get those by installing [pygal_maps_world_neo-stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs) alongside [pygal-stubs](https://github.com/manucorsu/pygal-stubs) for the rest of pygal. Both of those packages will be published very soon.
-
+In the spirit of respecting the [preferences](https://github.com/Kozea/CairoSVG/issues/373#issuecomment-1365838194) of pygal's authors, **this repository has no type hints or type stubs**. You can get those by installing [pygal_maps_world_neo-stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs) alongside [pygal-stubs](https://github.com/manucorsu/pygal-stubs) for the rest of pygal.
 ## Installation and usage
 
 > [!IMPORTANT]
@@ -56,7 +55,8 @@ I'll add these fixes myself once I find the time. If you want to help, please op
 [![incorrect1.png](https://i.postimg.cc/Y0JFKjvd/incorrect1.png)](https://postimg.cc/kRvGWJFS)
 - Fix the label that appears on hover, which after updating the SVG seems to be completely broken and I've haven't been able to fix it yet. The label instead of appearing on top of the country, it sometimes appears very far away from it, like in this example
 [![malawi.png](https://i.postimg.cc/G24PZWMR/malawi.png)](https://postimg.cc/zb1RhcZ2)
+- Add the ability to provide custom boundaries data in case people need a specific country's perspective (as in [Kozea/pygal issue #594](https://github.com/Kozea/pygal/issues/594))
 #### Low priority
 - Add more constants to the `i18n` module, e.g. ASEAN, MERCOSUR, EU, etc.
-- (veery low priority as I know it'll be a mess to implement) add the ability for maps to have both countries and supranational groups, e.g. a map that shows the entire EU in one color while showing every other country as separate.
+- add the ability for maps to have both countries and supranational groups, e.g. a map that shows the entire EU in one color while showing every other country as separate.
 - Any other improvements you can think of. If you want to help, please open a PR with your changes. Thanks!
