@@ -1,3 +1,5 @@
+# 1.1.3
+- Dropped Python 3.10 support due to it reaching [EOL](https://devguide.python.org/versions/#unsupported-versions) on October 1, 2026. The oldest supported version is now 3.11.
 # 1.1.2
 Prepping for the imminent release of [pygal_maps_world_neo-stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs) alongside [pygal-stubs](https://github.com/manucorsu/pygal-stubs).
 

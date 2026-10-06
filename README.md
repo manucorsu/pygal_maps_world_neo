@@ -9,10 +9,10 @@ In the spirit of respecting the [preferences](https://github.com/Kozea/CairoSVG/
 
 > [!IMPORTANT]
 > The oldest Python version that this fork supports is the newest of:
->    - the oldest Python version that is still receiving security updates (currently 3.10)
+>    - the oldest Python version that is still receiving security updates (currently 3.11)
 >    - the oldest version that pygal supports (currently 3.9)
 >
-> At the time of writing, that means that the oldest Python version we support is **Python 3.10** until its [EOL](https://devguide.python.org/versions/) in **October 2026**
+> Currently, this means that the oldest Python version we support is **Python 3.11** until its [EOL](https://devguide.python.org/versions/) in **October 2027**
 
 To install, simply do `pip install pygal_maps_world_neo` (or however you install packages from PyPI. This will also install pygal.)
 
