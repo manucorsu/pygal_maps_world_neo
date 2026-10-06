@@ -38,7 +38,7 @@ COUNTRIES = {
     "bz": "Belize",
     "ca": "Canada",
     "cc": "Cocos (Keeling) Islands",
-    "cd": "Congo, the Democratic Republic of the",
+    "cd": "Congo, Democratic Republic of the",
     "cf": "Central African Republic",
     "cg": "Congo",
     "ch": "Switzerland",
@@ -71,11 +71,11 @@ COUNTRIES = {
     "fi": "Finland",
     "fj": "Fiji",
     "fk": "Falkland Islands (Malvinas)",
-    "fm": "Micronesia (Federated States of)",
+    "fm": "Micronesia, Federated States of",
     "fo": "Faroe Islands",
     "fr": "France",
     "ga": "Gabon",
-    "gb": "United Kingdom",
+    "gb": "United Kingdom of Great Britain and Northern Ireland",
     "gd": "Grenada",
     "ge": "Georgia",
     "gf": "French Guiana",
@@ -106,7 +106,7 @@ COUNTRIES = {
     "in": "India",
     "io": "British Indian Ocean Territory",
     "iq": "Iraq",
-    "ir": "Iran (Islamic Republic of)",
+    "ir": "Iran, Islamic Republic of",
     "is": "Iceland",
     "it": "Italy",
     "je": "Jersey",
@@ -119,8 +119,8 @@ COUNTRIES = {
     "ki": "Kiribati",
     "km": "Comoros",
     "kn": "Saint Kitts and Nevis",
-    "kp": "Korea (Democratic People's Republic of)",
-    "kr": "Korea (Republic of)",
+    "kp": "Korea, Democratic People's Republic of",
+    "kr": "Korea, Republic of",
     "kw": "Kuwait",
     "ky": "Cayman Islands",
     "kz": "Kazakhstan",
@@ -164,10 +164,10 @@ COUNTRIES = {
     "nf": "Norfolk Island",
     "ng": "Nigeria",
     "ni": "Nicaragua",
-    "nl": "Netherlands",
+    "nl": "Netherlands, Kingdom of the",
     "no": "Norway",
     "np": "Nepal",
-    "nr": "Nauru",
+    "nr": "Naoero",
     "nu": "Niue",
     "nz": "New Zealand",
     "om": "Oman",
@@ -234,11 +234,11 @@ COUNTRIES = {
     "us": "United States",
     "uy": "Uruguay",
     "uz": "Uzbekistan",
-    "va": "Holy See (Vatican City State)",
+    "va": "Holy See",
     "vc": "Saint Vincent and the Grenadines",
-    "ve": "Venezuela (Bolivarian Republic of)",
-    "vg": "Virgin Islands, British",
-    "vi": "Virgin Islands, U.S.",
+    "ve": "Venezuela, Bolivarian Republic of",
+    "vg": "Virgin Islands (British)",
+    "vi": "Virgin Islands (U.S.)",
     "vn": "Viet Nam",
     "vu": "Vanuatu",
     "wf": "Wallis and Futuna",
@@ -248,8 +248,14 @@ COUNTRIES = {
     "za": "South Africa",
     "zm": "Zambia",
     "zw": "Zimbabwe",
+    "xk": "Kosovo",
 }
+"""
+Key is an ISO 3166-1 alpha-2 code.
+Value is the ISO name for the territory.
 
+Only the 249 officially assigned code elements are present, + Kosovo (xk)
+"""
 
 EUR = [
     "be",
@@ -587,9 +593,14 @@ Use `antarctica` and `usmca` respectively instead.
 
 def set_countries(countries, clear=False):
     """
-    Update the countries dictionary with the given countries. If clear is True, the existing countries will be cleared before updating.
+    Update the countries dictionary with the given countries.
+    If clear is True, the existing countries will be cleared before updating.
 
-    The countries parameter should be a dictionary-like object where the keys are lowercase ISO 3166-1 alpha-2 codes and the values are country names.
+    **Important: this will update the countries for all graphs. If you only need
+    to do it for a specific instance, use `instance.area_names.update(countries)`.**
+
+    The countries parameter should be a dictionary-like object where the keys
+    are lowercase ISO 3166-1 alpha-2 codes and the values are country names.
     """
     if clear:
         COUNTRIES.clear()

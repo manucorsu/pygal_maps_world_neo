@@ -47,16 +47,3 @@ To work on this project:
 5. Make your changes. Once you're done, run `hatch run check:all` to test your code with pytest and autoformat with black.
 6. Commit, push and open a PR asking to merge your fork's branch into this repository's `master` branch.
 7. Leave your hatch shell by using `exit` (not `deactivate`!)
-
-### To-do list
-I'll add these fixes myself once I find the time. If you want to help, please open a PR with your changes. Thanks!
-#### High-ish priority
-- Make it so that the `1` value does not appear in maps where it is not needed, e.g. in maps like this one
-[![incorrect1.png](https://i.postimg.cc/Y0JFKjvd/incorrect1.png)](https://postimg.cc/kRvGWJFS)
-- Fix the label that appears on hover, which after updating the SVG seems to be completely broken and I've haven't been able to fix it yet. The label instead of appearing on top of the country, it sometimes appears very far away from it, like in this example
-[![malawi.png](https://i.postimg.cc/G24PZWMR/malawi.png)](https://postimg.cc/zb1RhcZ2)
-- Add the ability to provide custom boundaries data in case people need a specific country's perspective (as in [Kozea/pygal issue #594](https://github.com/Kozea/pygal/issues/594))
-#### Low priority
-- Add more constants to the `i18n` module, e.g. ASEAN, MERCOSUR, EU, etc.
-- add the ability for maps to have both countries and supranational groups, e.g. a map that shows the entire EU in one color while showing every other country as separate.
-- Any other improvements you can think of. If you want to help, please open a PR with your changes. Thanks!

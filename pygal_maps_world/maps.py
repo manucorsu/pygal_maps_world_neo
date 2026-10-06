@@ -6,6 +6,7 @@ Worldmap chart
 from __future__ import division
 from pygal.util import cached_property
 from pygal.graph.map import BaseMap
+from pygal_maps_world import i18n
 from pygal_maps_world.i18n import COUNTRIES, SUPRANATIONAL
 import os
 
@@ -40,6 +41,22 @@ class World(BaseMap):
             for val in serie.values
             if val[1] is not None
         ]
+
+    @classmethod
+    def set_countries(cls, countries, clear=False):
+        """
+        Update the countries dictionary with the given countries.
+        If clear is True, the existing countries will be cleared before updating.
+
+        **Important: this will update the countries for all graphs. If you only need
+        to do it for a specific instance, use `instance.area_names.update(countries)`.**
+
+        The countries parameter should be a dictionary-like object where the keys
+        are lowercase ISO 3166-1 alpha-2 codes and the values are country names.
+
+        This classmethod is just a shortcut for `i18n.set_countries`
+        """
+        return i18n.set_countries(countries, clear)
 
 
 class SupranationalWorld(World):

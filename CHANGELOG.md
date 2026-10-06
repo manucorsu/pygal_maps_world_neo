@@ -1,5 +1,10 @@
 # 1.1.3
 - Dropped Python 3.10 support due to it reaching [EOL](https://devguide.python.org/versions/#unsupported-versions) on October 1, 2026. The oldest supported version is now 3.11.
+- Changed the default world map SVG. It now includes all ISO 3166-1 alpha-2 elements + Kosovo (xk) as separate elements, with the smaller territories (previously invisible or nearly invisible) now represented by circles. This means that all KVPs in `COUNTRIES` are now properly represented in the map.
+- `__init__.py` now exposes the default `COUNTRIES` and `SUPRANATIONAL` dictionaries from the i18n module.
+- Added classmethod `World.set_countries` as an alias/shortcut of `i18n.set_countries`. This (alongside the previous point) means that most imports of i18n are no longer needed in regular use.
+- Fixed some country names in i18n that didn't fully match their ISO names.
+
 # 1.1.2
 Prepping for the imminent release of [pygal_maps_world_neo-stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs) alongside [pygal-stubs](https://github.com/manucorsu/pygal-stubs).
 

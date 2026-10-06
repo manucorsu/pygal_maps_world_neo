@@ -59,3 +59,17 @@ def test_supranationalworldmap():
     assert len(q(".country.color-0")) == len(
         reduce(operator.or_, map(set, SUPRANATIONAL.values()))
     )
+
+
+def test_worldmap_i18n_classmethod():
+    set_countries(_COUNTRIES, True)
+    datas = {}
+    for i, ctry in enumerate(COUNTRIES):
+        datas[ctry] = i
+
+    World.set_countries({"fr": "Francia"})
+    wmap = World()
+    wmap.add("countries", datas)
+    q = wmap.render_pyquery()
+    assert len(q(".country.color-0")) == len(COUNTRIES)
+    assert "Francia" in q(".country.fr").text()

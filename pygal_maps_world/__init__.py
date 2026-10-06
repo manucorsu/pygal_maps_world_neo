@@ -1,3 +1,3 @@
 from .maps import World as World, SupranationalWorld as SupranationalWorld
 
-__all__ = ["World", "SupranationalWorld"]
+from .i18n import COUNTRIES as COUNTRIES, SUPRANATIONAL as SUPRANATIONAL
