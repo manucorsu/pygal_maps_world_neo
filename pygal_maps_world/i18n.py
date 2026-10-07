@@ -600,8 +600,6 @@ def set_countries(countries, clear=False):
     The countries parameter should be a dictionary-like object where the keys
     are lowercase ISO 3166-1 alpha-2 codes and the values are country names.
 
-    This classmethod is just a shortcut for `i18n.set_countries`.
-
     Examples:
         ```python
         my_country_names = {"fr": "Francia"}

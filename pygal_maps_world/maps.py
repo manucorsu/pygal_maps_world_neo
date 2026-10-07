@@ -24,7 +24,7 @@ class World(BaseMap):
     # not like the user would need to change them anyways
 
     # The following three attributes should probably be
-    # moved to __init__. Not all maps necessarily share 
+    # moved to __init__. Not all maps necessarily share
     # the same area names, prefixes and SVGs (can think of
     # a use case where the user would need different names
     # and boundaries to represent multiple countries'
@@ -33,7 +33,7 @@ class World(BaseMap):
     area_names = COUNTRIES
     area_prefix = ""
     svg_map = WORLD_MAP
-    
+
     kind = "country"
 
     @cached_property
