@@ -1,6 +1,7 @@
-from pygal_maps_world.maps import World, SupranationalWorld
-from pygal_maps_world.i18n import COUNTRIES, SUPRANATIONAL, set_countries
 import operator
+
+from pygal_maps_world.i18n import COUNTRIES, SUPRANATIONAL, set_countries
+from pygal_maps_world.maps import SupranationalWorld, World
 
 try:
     from functools import reduce
@@ -40,7 +41,7 @@ def test_worldmap_i18n():
 def test_worldmap_i18n_clear():
     set_countries(_COUNTRIES, True)
     wmap = World()
-    wmap.add("countries", dict(fr=12))
+    wmap.add("countries", {"fr": 12})
     set_countries({"fr": "Frankreich"}, clear=True)
     q = wmap.render_pyquery()
     assert len(q(".country.color-0")) == 1
