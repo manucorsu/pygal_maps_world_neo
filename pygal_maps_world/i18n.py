@@ -231,7 +231,7 @@ COUNTRIES = {
     "ua": "Ukraine",
     "ug": "Uganda",
     "um": "United States Minor Outlying Islands",
-    "us": "United States",
+    "us": "United States of America",
     "uy": "Uruguay",
     "uz": "Uzbekistan",
     "va": "Holy See",
@@ -594,13 +594,30 @@ Use `antarctica` and `usmca` respectively instead.
 def set_countries(countries, clear=False):
     """
     Update the countries dictionary with the given countries.
-    If clear is True, the existing countries will be cleared before updating.
 
-    **Important: this will update the countries for all graphs. If you only need
-    to do it for a specific instance, use `instance.area_names.update(countries)`.**
+    If clear is True, the existing countries will be cleared before updating.
 
     The countries parameter should be a dictionary-like object where the keys
     are lowercase ISO 3166-1 alpha-2 codes and the values are country names.
+
+    Examples:
+        ```python
+        my_country_names = {"fr": "Francia"}
+
+        World.set_countries(my_country_names)
+        # clear is False (by default), so "fr"
+        # will map to "Francia" and everything else
+        # will remain the same
+
+        World.set_countries(my_country_names, clear=True)
+        # clear is True, so "fr" will map to
+        # "Francia" and everything else will
+        # be cleared: **all other countries
+        # will have no name displayed**. You
+        # should only really use clear=True
+        # if you're passing a mapping of all
+        # countries.
+    ```
     """
     if clear:
         COUNTRIES.clear()

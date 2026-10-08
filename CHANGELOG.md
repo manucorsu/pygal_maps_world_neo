@@ -4,7 +4,11 @@
 - `__init__.py` now exposes the default `COUNTRIES` and `SUPRANATIONAL` dictionaries from the i18n module.
 - Added classmethod `World.set_countries` as an alias/shortcut of `i18n.set_countries`. This (alongside the previous point) means that most imports of i18n are no longer needed in regular use.
 - Fixed some country names in i18n that didn't fully match their ISO names.
-
+- Switched to Astral's hip and trendy, blazingly fast tools.
+    - Hatch (CLI) has been replaced with uv.
+    - Hatchling has been replaced with uv\_build.
+    - black has been replaced with ruff's formatter.
+    - Added ruff for linting, just like pygal has.
 # 1.1.2
 Prepping for the imminent release of [pygal_maps_world_neo-stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs) alongside [pygal-stubs](https://github.com/manucorsu/pygal-stubs).
 
