@@ -16,27 +16,14 @@ In the spirit of respecting the [preferences](https://github.com/Kozea/CairoSVG/
 
 To install, simply run `pip install pygal_maps_world_neo`, `uv add pygal_maps_world_neo`, or however you install packages from PyPI. This will also install pygal.
 
-After that, we recommend using it like this instead of how [pygal's docs](https://www.pygal.org/en/stable/documentation/types/maps/pygal_maps_world.html) suggest:
+You then import the `World` or `SupranationalWorld` classes and use them as you would with the original pygal_maps_world package. You have two options for importing the classes:
+- `from pygal_maps_world import World` (or `SupranationalWorld`) - this is the recommended way, as it allows type checking with [the stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs)
+- Using `instance = pygal.maps.world.World()` (or `SupranationalWorld`) - this is the way pygal's docs suggest, and it will work fine at runtime, but it will break type checking if using [the stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs)
+
+### Simple world map example
 
 ```python
 from pygal_maps_world import World
-
-# Optional: set custom country names (ISO names in
-# English are used by default.)
-# If clear is True, the existing countries will be cleared
-# before updating. (you should only really use clear=True
-# if you're providing a mapping of all the countries
-# you're going to use)
-
-World.set_countries(
-    {
-        "us": "Estados Unidos",
-        "de": "Alemania",
-        "fr": "Francia",
-        # ...
-    },
-    clear=True,
-)
 
 worldmap_chart = World()
 worldmap_chart.title = "Some countries"
@@ -65,15 +52,87 @@ worldmap_chart.add(
     ],
 )
 worldmap_chart.add("U countries", ["ua", "ug", "us", "uy", "uz"])
-worldmap_chart.render()
+worldmap_chart.render_in_browser()
 ```
 
-While you can still use it how the docs suggest (using `pygal.maps.world.World`) and it will work fine at runtime, this **will break type checking** when using [the stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs). Static type checkers cannot tell that pygal imports all installed maps dynamically at runtime, so everything will be `Unknown`. If you do not type-check your code, do whatever approach you prefer, but if you want type-checking you **must** use this as shown above.
+You can also work with the `COUNTRIES` mapping directly:
+```python
+from pygal_maps_world import World, COUNTRIES
+
+VOWELS = ("a", "e", "i", "o", "u")
+data = {"a": [], "e": [], "i": [], "o": [], "u": [], "non_vowel": []}
+for country_code, country_name in COUNTRIES.items():
+    starting_char = country_name[0].lower()
+    if starting_char in VOWELS:
+        data[starting_char].append(country_code)
+    else:
+        data["non_vowel"].append(country_code)
+
+world = World()
+world.title = "vowels"
+for k, v in data.items():
+    world.add(k, v)
+
+world.render_in_browser()
+```
+
+### Providing a custom boundaries
+The default map boundaries are based on [this Wikipedia map](https://en.wikipedia.org/wiki/File:BlankMap-World-with-Circles.svg) (public domain), removing all territories that don't have an officially assigned ISO 3166-1 alpha-2 code (except for Kosovo `xk`, which is included).
+
+If you need to provide your own boundaries to represent a specific country's perspective (as in [Kozea/pygal issue #594](https://github.com/Kozea/pygal/issues/594)), you can do so by setting a custom map SVG string after you instantiate World, but **before you render it**:
+
+```python
+from pygal_maps_world import World
+
+with open("my_custom_boundaries.svg", "r", encoding="utf8") as f:
+    custom_boundaries = f.read()
+
+world = World()
+world.svg_map = custom_boundaries
+
+world.title = "title"
+# then add data and render as usual
+```
+
+**The SVG you provide must follow the same structure the default map has**. You should probably start from the default map and modify it to your needs, rather than creating a new one. 
+
+### Providing custom country names
+By default, the territory names are their ISO names in English. You can provide your own names by using the `World.set_countries` classmethod:
+
+```python
+from pygal_maps_world import World
+
+# changing a couple of names:
+World.set_countries(
+    {
+        "us": "United States",
+        "gb": "United Kingdom",
+        "bo": "Bolivia",
+    }
+)
+# Their default names are the long official ones so you
+# might want to shorten them,
+# (e.g. "Bolivia, Plurinational State of" -> "Bolivia")
+# keeping the rest unchanged
+
+
+# changing all names (by clearing the original mapping),
+# e.g. to display all country names in Spanish:
+spanish_names = {
+    "ad": "Andorra",
+    "ae": "Emiratos Árabes Unidos",
+    "af": "Afganistán",
+    # ...etc
+}
+World.set_countries(spanish_names, clear=True)
+# Because clear=True, **countries that are not
+# provided in `spanish_names` will not have a name displayed**. You should provide all countries if you want to use this option.
+```
 
 ## Contributing
 PRs are welcome. Please follow the rules:
 - **Do not break the existing API in any way**. If you want to add new features, please do so in a backward-compatible way. This fork should be a drop-in replacement for the original.
-- Type checking-related changes will soon be/are welcome in [pygal_maps_world_neo-stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs), but not here (see above).
+- Type checking-related changes are welcome in [pygal_maps_world_neo-stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs), not here (see above).
 - Manually review all AI-generated code.
 
 To work on this project:
