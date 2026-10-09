@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.11"
 
 [[package]]
@@ -205,7 +205,7 @@ wheels = [
 
 [[package]]
 name = "pygal-maps-world-neo"
-version = "1.1.3"
+version = "1.1.3.post1"
 source = { editable = "." }
 dependencies = [
     { name = "pygal" },

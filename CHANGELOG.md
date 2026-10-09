@@ -9,6 +9,8 @@
     - Hatchling has been replaced with uv\_build.
     - black has been replaced with ruff's formatter.
     - Added ruff for linting, just like pygal has.
+## 1.1.3.post1
+- Removed the `_check.py` script from `pygal_maps_world` to avoid distributing it unnecessarily (which was also breaking the stubs' own `uv run check`)
 # 1.1.2
 Prepping for the imminent release of [pygal_maps_world_neo-stubs](https://github.com/manucorsu/pygal_maps_world_neo-stubs) alongside [pygal-stubs](https://github.com/manucorsu/pygal-stubs).
 
