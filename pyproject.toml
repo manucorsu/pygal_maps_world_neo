@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "pygal_maps_world_neo"
-version = "1.1.3"
+version = "1.1.3.post1"
 description = "World maps for pygal (but active)"
 readme = "README.md"
 license = "LGPL-3.0-or-later"
@@ -43,7 +43,7 @@ Repository = "https://github.com/manucorsu/pygal_maps_world_neo"
 Issues = "https://github.com/manucorsu/pygal_maps_world_neo/issues"
 
 [project.scripts]
-check = "pygal_maps_world._check:main"
+check = "_check:main"
 
 [tool.uv.build-backend]
 module-root = ""
